@@ -463,8 +463,8 @@ var APP_DATA = {
         },
         {
           "type": "nav",
-          "yaw": 127.13,
-          "pitch": 10.54,
+          "yaw": 121.36,
+          "pitch": 0.73,
           "rotation": 0,
           "target": [
             "img-08"
@@ -1380,29 +1380,21 @@ var APP_DATA = {
       "hotspots": [
         {
           "type": "nav",
+          "yaw": -95.44,
+          "pitch": 6.15,
+          "rotation": 0,
+          "target": [
+            "img-41",
+            "img-42"
+          ]
+        },
+        {
+          "type": "nav",
           "yaw": 176.76,
           "pitch": 4.92,
           "rotation": 0,
           "target": [
             "img-39"
-          ]
-        },
-        {
-          "type": "nav",
-          "yaw": -109.4,
-          "pitch": 7.63,
-          "rotation": 0,
-          "target": [
-            "img-41"
-          ]
-        },
-        {
-          "type": "nav",
-          "yaw": -85.06,
-          "pitch": 7.89,
-          "rotation": 0,
-          "target": [
-            "img-42"
           ]
         },
         {

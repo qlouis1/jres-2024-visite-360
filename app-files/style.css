@@ -266,6 +266,7 @@ body.fullscreen-enabled.mobile #autorotateToggle {
   -webkit-transition: opacity 0.5s ease-in-out;
   transition: opacity 0.5s ease-in-out; 
   opacity: 0;
+  display: none;
 }
 
 .mobile #sceneList {
@@ -303,6 +304,7 @@ body.fullscreen-enabled.mobile #autorotateToggle {
 #sceneList.enabled {
   /* margin-left: 220px; */
   opacity: 100%;
+  display: block;
 }
 
 #sceneList .scene {

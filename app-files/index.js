@@ -151,7 +151,7 @@
         span.appendChild(p);
         // Add click event handler.
         span.addEventListener('click', function () {
-          switchScene(findSceneById(hotspot.target[0]));
+          switchScene(findSceneById(hotspot.target[0]), scene);
         });
         content.appendChild(span);
       } else {
@@ -161,7 +161,7 @@
           li.innerHTML = findSceneDataById(target).name;
           // Add click event handler.
           li.addEventListener('click', function () {
-            switchScene(findSceneById(target));
+            switchScene(findSceneById(target), scene);
           });
           ul.appendChild(li);
         });
@@ -203,7 +203,7 @@
         ) + findSceneDataById(target).name;
         // Add click event handler.
         li.addEventListener('click', function () {
-          switchScene(findSceneById(target));
+          switchScene(findSceneById(target), scene);
         });
         ul.appendChild(li);
       });
@@ -293,7 +293,7 @@
 
   // Start with the scene list open on desktop.
   if (!document.body.classList.contains('mobile')) {
-    showSceneList();
+    //showSceneList();
   }
 
   // Set handler for scene switch.
@@ -334,13 +334,46 @@
     return s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;');
   }
 
-  function switchScene(scene) {
-    stopAutorotate();
-    if (scene.data.initialViewParameters) {
-      var initialViewParameters = scene.data.initialViewParameters;
-    } else {
-      var initialViewParameters = { "pitch": 0, "yaw": 0, };
+
+  function getInitialViewParameters(scene, source) {
+    var viewParameters = null;
+    if (source) {
+      var originId = source.id;
+      scene.data.hotspots.forEach(h => {
+        if (h.type == "nav") {
+          h.target.forEach(t => {
+            if (t == originId && viewParameters == null) {
+              viewParameters = { "pitch": h.pitch * Math.PI / -180, "yaw": ((h.yaw + 180) % 360) * Math.PI / 180 };
+            }
+          })
+        } else {
+          app_data.stairs[h.target].target.forEach(t => {
+            if (t == originId && viewParameters == null) {
+              viewParameters = { "pitch": h.pitch * Math.PI / -180, "yaw": ((h.yaw + 180) % 360) * Math.PI / 180 };
+            }
+          });
+        }
+      });
+    } else if (scene.data.initialViewParameters) {
+      viewParameters = scene.data.initialViewParameters;
     }
+
+    if (viewParameters == null) {
+      viewParameters = { "pitch": 0, "yaw": 0, };
+    }
+
+    return viewParameters
+  }
+
+  function switchScene(scene, source = null) {
+
+    // set initial view parameters
+    // if we have a source scene, we invert the camera from the hotspot leading to the room we come from
+    var initialViewParameters = getInitialViewParameters(scene, source);
+
+    console.log(initialViewParameters);
+
+    stopAutorotate();
     scene.view.setParameters(initialViewParameters);
     scene.scene.switchTo();
     startAutorotate();
@@ -399,119 +432,6 @@
       autorotateToggleElement.classList.add('enabled');
       startAutorotate();
     }
-  }
-
-  function createLinkHotspotElement(hotspot) {
-
-    // Create wrapper element to hold icon and tooltip.
-    var wrapper = document.createElement('div');
-    wrapper.classList.add('hotspot');
-    wrapper.classList.add('link-hotspot');
-
-    // Create image element.
-    var icon = document.createElement('img');
-    icon.src = 'img/link.png';
-    icon.classList.add('link-hotspot-icon');
-
-    // Set rotation transform.
-    var transformProperties = ['-ms-transform', '-webkit-transform', 'transform'];
-    for (var i = 0; i < transformProperties.length; i++) {
-      var property = transformProperties[i];
-      icon.style[property] = 'rotate(' + hotspot.rotation + 'rad)';
-    }
-
-    // Add click event handler.
-    wrapper.addEventListener('click', function () {
-      switchScene(findSceneById(hotspot.target));
-    });
-
-    // Prevent touch and scroll events from reaching the parent element.
-    // This prevents the view control logic from interfering with the hotspot.
-    stopTouchAndScrollEventPropagation(wrapper);
-
-    // Create tooltip element.
-    var tooltip = document.createElement('div');
-    tooltip.classList.add('hotspot-tooltip');
-    tooltip.classList.add('link-hotspot-tooltip');
-    tooltip.innerHTML = findSceneDataById(hotspot.target).name;
-
-    wrapper.appendChild(icon);
-    wrapper.appendChild(tooltip);
-
-    return wrapper;
-  }
-
-  function createInfoHotspotElement(hotspot) {
-
-    // Create wrapper element to hold icon and tooltip.
-    var wrapper = document.createElement('div');
-    wrapper.classList.add('hotspot');
-    wrapper.classList.add('info-hotspot');
-
-    // Create hotspot/tooltip header.
-    var header = document.createElement('div');
-    header.classList.add('info-hotspot-header');
-
-    // Create image element.
-    var iconWrapper = document.createElement('div');
-    iconWrapper.classList.add('info-hotspot-icon-wrapper');
-    var icon = document.createElement('img');
-    icon.src = 'img/info.png';
-    icon.classList.add('info-hotspot-icon');
-    iconWrapper.appendChild(icon);
-
-    // Create title element.
-    var titleWrapper = document.createElement('div');
-    titleWrapper.classList.add('info-hotspot-title-wrapper');
-    var title = document.createElement('div');
-    title.classList.add('info-hotspot-title');
-    title.innerHTML = hotspot.title;
-    titleWrapper.appendChild(title);
-
-    // Create close element.
-    var closeWrapper = document.createElement('div');
-    closeWrapper.classList.add('info-hotspot-close-wrapper');
-    var closeIcon = document.createElement('img');
-    closeIcon.src = 'img/close.png';
-    closeIcon.classList.add('info-hotspot-close-icon');
-    closeWrapper.appendChild(closeIcon);
-
-    // Construct header element.
-    header.appendChild(iconWrapper);
-    header.appendChild(titleWrapper);
-    header.appendChild(closeWrapper);
-
-    // Create text element.
-    var text = document.createElement('div');
-    text.classList.add('info-hotspot-text');
-    text.innerHTML = hotspot.text;
-
-    // Place header and text into wrapper element.
-    wrapper.appendChild(header);
-    wrapper.appendChild(text);
-
-    // Create a modal for the hotspot content to appear on mobile mode.
-    var modal = document.createElement('div');
-    modal.innerHTML = wrapper.innerHTML;
-    modal.classList.add('info-hotspot-modal');
-    document.body.appendChild(modal);
-
-    var toggle = function () {
-      wrapper.classList.toggle('visible');
-      modal.classList.toggle('visible');
-    };
-
-    // Show content when hotspot is clicked.
-    wrapper.querySelector('.info-hotspot-header').addEventListener('click', toggle);
-
-    // Hide content when close icon is clicked.
-    modal.querySelector('.info-hotspot-close-wrapper').addEventListener('click', toggle);
-
-    // Prevent touch and scroll events from reaching the parent element.
-    // This prevents the view control logic from interfering with the hotspot.
-    stopTouchAndScrollEventPropagation(wrapper);
-
-    return wrapper;
   }
 
   // Prevent touch and scroll events from reaching the parent element.
