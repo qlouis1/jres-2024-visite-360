@@ -7,27 +7,9 @@ from bs4 import BeautifulSoup
 data_file_path = "../app-files/data.js"
 index_file_path = "../app-files/index.html"
 
-    # index.html
-    # print(f"Reading {index_file_path}")
 
-    # with open(index_file_path) as f:
-    #     index = f.read()
-
-    # index = BeautifulSoup(index, "html.parser")
-    # scene_list = index.find("ul", {"class": "scenes"})
-        # manage index.html: set list content with names of scenes
-        # i = scene_list.find("a", {"data-id": f"{scene['id']}"})
-        # i.li.string.replace_with(scene_reference[scene["id"]])
-
-
-# print(f"Writing {index_file_path}")
-# # with open("../app-files/index-w.html", "w") as f:
-# with open(index_file_path, "w") as f:
-#     f.seek(0)
-#     f.write(str(index))
-#     f.truncate()
 def validate_data():
-    # data.js
+        # data.js
     print(f"Reading {data_file_path}")
     with open(data_file_path) as f:
         data = f.read()
@@ -101,7 +83,30 @@ def validate_data():
         f.write(to_print)
         f.truncate()    
 
+# def build_html():
+#     # index.html
+#     print(f"Reading {index_file_path}")
+
+#     with open(index_file_path) as f:
+#         index = f.read()
+
+#     index = BeautifulSoup(index, "html.parser")
+#     scene_list = index.find("ul", {"class": "scenes"})
+        
+#         for scene in scenes:
+#             # manage index.html: set list content with names of scenes
+#             i = scene_list.find("a", {"data-id": f"{scene['id']}"})
+#             i.li.string.replace_with(scene_reference[scene["id"]])
+
+
+# print(f"Writing {index_file_path}")
+# # with open("../app-files/index-w.html", "w") as f:
+# with open(index_file_path, "w") as f:
+#     f.seek(0)
+#     f.write(str(index))
+#     f.truncate()
 def main():
+
     validate_data()
 
 if __name__ == "__main__":

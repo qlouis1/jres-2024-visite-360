@@ -2,56 +2,56 @@ var APP_DATA = {
   "stairs": {
     "str-ouest": {
       "target": [
-        "img-01",
-        "img-07",
-        "img-09",
-        "img-14",
-        "img-22",
-        "img-26",
-        "img-39",
+        "img-54",
         "img-46",
-        "img-54"
+        "img-39",
+        "img-26",
+        "img-22",
+        "img-14",
+        "img-09",
+        "img-07",
+        "img-01"
       ]
     },
     "str-est": {
       "target": [
-        "img-25",
-        "img-26",
-        "img-30",
-        "img-43",
+        "img-51",
         "img-50",
-        "img-51"
+        "img-43",
+        "img-30",
+        "img-26",
+        "img-25"
       ]
     },
     "str-mezzanine": {
       "target": [
+        "img-31",
         "img-01",
-        "img-15",
-        "img-31"
+        "img-15"
       ]
     },
     "str-escalator": {
       "target": [
-        "img-02",
+        "img-17",
         "img-08",
-        "img-17"
+        "img-02"
       ]
     },
     "str-nord": {
       "target": [
-        "img-18",
+        "img-55",
         "img-33",
-        "img-55"
+        "img-18"
       ]
     },
     "str-sud": {
       "target": [
-        "img-15",
-        "img-31",
-        "img-33",
-        "img-34",
+        "img-57",
         "img-56",
-        "img-57"
+        "img-34",
+        "img-33",
+        "img-31",
+        "img-15"
       ]
     }
   },
@@ -76,7 +76,8 @@ var APP_DATA = {
           "pitch": 2.28,
           "rotation": 0,
           "target": [
-            "img-03"
+            "img-03",
+            "img-04"
           ]
         },
         {
@@ -338,10 +339,10 @@ var APP_DATA = {
           "pitch": 6.33,
           "rotation": 0,
           "target": [
-            "img-10",
-            "img-11",
+            "img-13",
             "img-12",
-            "img-13"
+            "img-11",
+            "img-10"
           ]
         },
         {
@@ -561,19 +562,11 @@ var APP_DATA = {
         },
         {
           "type": "nav",
-          "yaw": -162.12,
-          "pitch": 2.58,
+          "yaw": -164.9,
+          "pitch": 1.05,
           "rotation": 0,
           "target": [
-            "img-20"
-          ]
-        },
-        {
-          "type": "nav",
-          "yaw": -165.87,
-          "pitch": 1.91,
-          "rotation": 0,
-          "target": [
+            "img-20",
             "img-21"
           ]
         },
@@ -623,20 +616,21 @@ var APP_DATA = {
         },
         {
           "type": "nav",
-          "yaw": 10.37,
-          "pitch": 0.97,
-          "rotation": 0,
-          "target": [
-            "img-23"
-          ]
-        },
-        {
-          "type": "nav",
           "yaw": 19.02,
           "pitch": 1.61,
           "rotation": 0,
           "target": [
             "img-31"
+          ]
+        },
+        {
+          "type": "nav",
+          "yaw": 10.37,
+          "pitch": 0.97,
+          "rotation": 0,
+          "target": [
+            "img-23",
+            "img-29"
           ]
         },
         {
@@ -657,20 +651,20 @@ var APP_DATA = {
       "hotspots": [
         {
           "type": "nav",
-          "yaw": -13.48,
-          "pitch": 2.01,
-          "rotation": 0,
-          "target": [
-            "img-18"
-          ]
-        },
-        {
-          "type": "nav",
           "yaw": -2.52,
           "pitch": 1.47,
           "rotation": 0,
           "target": [
             "img-21"
+          ]
+        },
+        {
+          "type": "nav",
+          "yaw": -13.48,
+          "pitch": 2.01,
+          "rotation": 0,
+          "target": [
+            "img-18"
           ]
         },
         {
@@ -1854,7 +1848,7 @@ var APP_DATA = {
           "pitch": 2.85,
           "rotation": 0,
           "target": [
-            "img-15"
+            "img-08"
           ]
         }
       ]
