@@ -361,12 +361,12 @@ body.fullscreen-enabled.mobile #autorotateToggle {
 }
 
 .no-touch #sceneList .scene:hover {
-  background-color: #25aae1;
+  background-color: #fff;
   font-weight: bold;
 }
 
 #sceneList .scene.current li {
-  background-color: #25aae1;
+  background-color: #fff;
   font-weight: bold;
 }
 

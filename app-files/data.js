@@ -199,7 +199,7 @@ var APP_DATA = {
     },
     {
       "id": "img-04",
-      "name": "Scène du Grand Auditorium",
+      "name": "Grand Auditorium (scène)",
       "level": "-2",
       "hotspots": [
         {
@@ -1014,7 +1014,7 @@ var APP_DATA = {
     },
     {
       "id": "img-29",
-      "name": "Scène de la Nef",
+      "name": "La Nef (scène)",
       "level": "RDC",
       "hotspots": [
         {
@@ -1275,7 +1275,7 @@ var APP_DATA = {
     },
     {
       "id": "img-37",
-      "name": "Passage vers La Halle 1",
+      "name": "Passage vers La Halle - 1",
       "level": "+1",
       "hotspots": [
         {
@@ -1415,8 +1415,8 @@ var APP_DATA = {
       "hotspots": [
         {
           "type": "nav",
-          "yaw": 101.3,
-          "pitch": 8.54,
+          "yaw": 101.09,
+          "pitch": 4.1,
           "rotation": 0,
           "target": [
             "img-40"
