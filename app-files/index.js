@@ -22,7 +22,7 @@
   var app_data = window.APP_DATA;
   var Hammer = Marzipano.dependencies['hammerjs'];
   var settings = {
-    "name": "Project Title",
+    "name": "JRES 2024 - Visite 36",
     "mouseViewMode": "drag",
     "autorotateEnabled": false,
     "fullscreenButton": false,
