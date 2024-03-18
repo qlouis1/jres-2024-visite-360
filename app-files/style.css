@@ -328,6 +328,10 @@ body.fullscreen-enabled.mobile #autorotateToggle {
 
 .mobile #sceneList .scenes {
   height: 100%;
+  max-height: 100%;
+  display: block;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 #sceneList.enabled {
@@ -344,6 +348,7 @@ body.fullscreen-enabled.mobile #autorotateToggle {
 
 .mobile #sceneList .scene {
   height: 40px;
+  width: 100%;
 }
 
 #sceneList .scene .text {
