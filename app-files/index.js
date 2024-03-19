@@ -185,7 +185,7 @@
       if ("icon" in hotspot) {
         icon.src = 'img/' + hotspot.icon;
       } else {
-        icon.src = 'img/play.png';
+        icon.src = 'img/stairs.png';
       }
       icon.classList.add('nav-hotspot-icon');
 
