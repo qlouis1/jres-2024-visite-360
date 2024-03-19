@@ -26,7 +26,8 @@
     "mouseViewMode": "drag",
     "autorotateEnabled": false,
     "fullscreenButton": false,
-    "viewControlButtons": false
+    "viewControlButtons": false,
+    "firstScene": "img-16"
 
   }
 
@@ -370,9 +371,6 @@
     // set initial view parameters
     // if we have a source scene, we invert the camera from the hotspot leading to the room we come from
     var initialViewParameters = getInitialViewParameters(scene, source);
-
-    console.log(initialViewParameters);
-
     stopAutorotate();
     scene.view.setParameters(initialViewParameters);
     scene.scene.switchTo();
@@ -485,10 +483,11 @@
 
   }
 
-
-
-
   // Display the initial scene.
-  switchScene(scenes[0]);
+  if (settings.firstScene && settings.firstScene != "") {
+    switchScene(findSceneById(settings.firstScene));
+  } else {
+    switchScene(scenes[0]);
+  }
 
 })();
