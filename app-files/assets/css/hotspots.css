@@ -4,6 +4,9 @@
     --nav-expanded-width: 300px;
     --nav-transition-duration: 250ms;
 
+    --icon-hotspot-size: 40px;
+    --icon-icon-font-size: 24px;
+
     --hotspot-primary-color: white;
     --hotspot-secondary-color: black;
     --hotspot-text-color: whitesmoke;
@@ -19,7 +22,8 @@
 }
 
 /* nav */
-.nav-hotspot {
+.nav-hotspot,
+.stairs-hotspot {
     margin-left: calc(var(--nav-hotspot-size) / -2);
     margin-top: calc(var(--nav-hotspot-size) / -2);
 
@@ -33,7 +37,8 @@
         outline 250ms var(--nav-transition-duration);
 }
 
-.nav-hotspot:hover {
+.nav-hotspot:hover,
+.stairs-hotspot:hover {
     width: calc(var(--nav-expanded-width) + var(--nav-hotspot-size));
     border-radius: 5px;
     outline: 3px solid transparent;
@@ -47,7 +52,8 @@
     height: var(--nav-hotspot-size);
 }
 
-.nav-hotspot i {
+.nav-hotspot i,
+.stairs-hotspot i {
     font-size: var(--nav-icon-font-size);
     transition: transform var(--nav-transition-duration) ease-in-out;
 }
@@ -83,4 +89,27 @@
 .nav-target:hover {
     outline: 3px solid var(--hotspot-secondary-color);
     cursor: pointer;
+}
+
+/* icon */
+.icon-hotspot {
+    margin-left: calc(var(--icon-hotspot-size) / -2);
+    margin-top: calc(var(--icon-hotspot-size) / -2);
+
+    width: var(--icon-hotspot-size);
+    height: var(--icon-hotspot-size);
+    border-radius: 25%;
+    outline: 1px solid var(--hotspot-secondary-color);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.8), 0 0 12px rgba(0, 0, 0, 0.4), 0 0 1px rgba(0, 0, 0, 0.8) inset;
+}
+
+.icon-flex-cont {
+    width: 100%;
+    height: 100%
+}
+
+.icon-hotspot i {
+    padding-top: 2px;
+    padding-left: 1px;
+    font-size: var(--icon-icon-font-size);
 }

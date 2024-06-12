@@ -1,3 +1,159 @@
-<!doctype html><html><head><title>JRES 2024 - Visite 360</title><meta charset="utf-8"/><meta content="target-densitydpi=device-dpi,width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui" name="viewport"/><style>@-ms-viewport {
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>JRES 2024 - Visite 360</title>
+    <meta charset="utf-8" />
+    <meta content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" name="viewport" />
+    <style>
+        @-ms-viewport {
             width: device-width;
-        }</style><link href="assets/css/bootstrap.min.css" rel="stylesheet"/><link href="assets/css/bootstrap-icons.min.css" rel="stylesheet"/><link href="assets/css/style.css" rel="stylesheet"/><link href="assets/css/hotspots.css" rel="stylesheet"/><script defer="defer" src="main.bundle.js?66d9ec3525c9b3e79d15"></script></head><body class="multiple-scenes"><div id="pano"></div><div id="current-scene" class="d-none" data-id="img-16"></div><div id="ui"><div id="titlebar" class="container-fluid d-inline-flex flex-wrap justify-content-between"><div class="ttbcontent order-1 order-md-1 d-flex align-items-center"><img src="assets/images/jres-logo.png"/></div><div class="ttbcontent order-4 order-md-2 d-flex align-items-center"><div id="ttb-cmenu-nav-button" class="btn d-inline-flex collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cmenu" aria-expanded="false" aria-controls="cmenu"><i id="ttb-caret" class="d-flex bi bi-caret-up-fill"></i><p class="d-none d-md-flex ms-1">Navigation</p><i class="d-flex d-md-none bi bi-list"></i></div></div><div class="ttbcontent order-3 order-md-3 d-flex align-items-center"><p id="ttb-scene-title" class="text-center"></p></div><div class="ttbcontent order-2 order-md-5 d-flex align-items-center"><a class="btn d-inline-flex" href="https://2024.jres.org/"><p class="d-flex me-1">2024.jres.org</p><i class="bi bi-door-open"></i> <i class="bi bi-arrow-right"></i></a></div><div class="ttbcontent order-md-4 d-none d-md-flex align-items-center"><div style="width:100px;height:40px;"></div></div></div><div id="cmenu" class="collapse collapse-vertical container-fluid pt-0 pt-md-2"><div id="content-nav-mb" class="row d-flex d-md-none text-center"><div id="button-levels-mb" class="buttons-mb col btn align-content-center active">Étages</div><div id="button-map-mb" class="buttons-mb col btn align-content-center">Plan</div><div id="button-all-rooms-mb" class="buttons-mb col btn align-content-center">Salles</div></div><div class="row flex-nowrap h-100"><div class="col-auto d-none d-md-flex"></div><div id="content-left" class="col col-12 col-md-6 h-100"><div id="content-nav-dt" class="row d-none d-md-flex mb-1"><div id="button-all-rooms-dt" class="buttons-dt col btn">Toutes les salles</div><div id="button-levels-dt" class="buttons-dt col btn active">Étages</div></div><div class="row"><div id="content-all-rooms" class="content-dt content-mb col-12 d-flex flex-column flex-md-wrap flex-md-shrink inactive"></div><div id="content-levels" class="content-dt content-mb col-12 active"><div class="row row-cols-3 flex-nowrap"><div id="cmenu-content-axio-nav" class="col-auto px-0 flex-column"></div><div id="cmenu-content-axio-images" class="col-auto px-0"></div><div id="cmenu-content-axio-scenes" class="d-none d-md-flex flex-grow-1 col px-0"></div></div></div></div></div><div id="content-right" class="col col-12 col-md-6 h-100"><div id="cr-map-scenes" class="d-flex d-md-none mb-1"></div><div><div id="cr-map-image"></div><div id="cr-map-pointers"></div></div></div><div class="col-auto d-none d-md-flex"></div></div></div></div><a href="javascript:void(0)" id="autorotateToggle"><i class="bi bi-play-btn"></i> <i class="bi bi-pause-btn"></i> </a><a href="javascript:void(0)" id="fullscreenToggle"><i class="bi bi-fullscreen"></i> <i class="bi bi-fullscreen-exit"></i> </a><a class="viewControlButton viewControlButton-1" href="javascript:void(0)" id="viewUp"><i class="bi bi-arrow-up"></i> </a><a class="viewControlButton viewControlButton-2" href="javascript:void(0)" id="viewDown"><i class="bi bi-arrow-down"></i> </a><a class="viewControlButton viewControlButton-3" href="javascript:void(0)" id="viewLeft"><i class="bi bi-arrow-left"></i> </a><a class="viewControlButton viewControlButton-4" href="javascript:void(0)" id="viewRight"><i class="bi bi-arrow-right"></i> </a><a class="viewControlButton viewControlButton-5" href="javascript:void(0)" id="viewIn"><i class="bi bi-plus-lg"></i> </a><a class="viewControlButton viewControlButton-6" href="javascript:void(0)" id="viewOut"><i class="bi bi-dash-lg"></i></a></body></html>
+        }
+    </style>
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="assets/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="assets/css/solid.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/hotspots.css" rel="stylesheet" />
+
+
+<script defer src="main.bundle.js?89dea03e4e5163be127d"></script></head>
+
+<body class="multiple-scenes">
+
+    <div id="pano"></div>
+    <div id="current-scene" class="d-none" data-id="img-16"></div>
+    <div id="ui">
+        <div id="titlebar" class="container-fluid d-inline-flex flex-wrap justify-content-between">
+
+            <div class="ttbcontent order-1 order-md-1 d-flex align-items-center">
+                <img src="assets/images/jres-logo.png" />
+            </div>
+
+            <div class="ttbcontent order-4 order-md-2 d-flex align-items-center">
+                <div id="ttb-cmenu-nav-button" class="btn d-inline-flex collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cmenu" aria-expanded="false"
+                    aria-controls="cmenu">
+                    <i id="ttb-caret" class="d-flex bi bi-caret-up-fill"></i>
+                    <p class="d-none d-md-flex ms-1"> Navigation </p>
+                    <i class="d-flex d-md-none bi bi-list"></i>
+                </div>
+            </div>
+
+            <div class="ttbcontent order-3 order-md-3 d-flex align-items-center">
+                <p id="ttb-scene-title" class="text-center"></p>
+            </div>
+
+            <div class="ttbcontent order-2 order-md-5 d-flex align-items-center">
+                <a class="btn d-inline-flex" href="https://2024.jres.org/">
+                    <p class="d-flex me-1">2024.jres.org</p>
+                    <i class="bi bi-door-open"></i>
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="ttbcontent order-md-4 d-none d-md-flex align-items-center">
+                <div style="width:100px;height:40px;"></div>
+            </div>
+        </div>
+        <!-- Contenu du menu de navigation -->
+        <div id="cmenu" class="collapse collapse-vertical container-fluid pt-0 pt-md-2">
+            <!-- Menu de navigation de tabs sur mobile-->
+            <div id="content-nav-mb" class="row d-flex d-md-none text-center">
+                <div id="button-levels-mb" class="buttons-mb col btn align-content-center active">
+                    Étages
+                </div>
+                <div id="button-map-mb" class="buttons-mb col btn align-content-center">
+                    Plan
+                </div>
+                <div id="button-all-rooms-mb" class="buttons-mb col btn align-content-center">
+                    Salles
+                </div>
+            </div>
+            <!-- colones de contenu -->
+            <div class="row flex-nowrap h-100">
+                <!-- partie gauche: nav -->
+                <div class="col-auto d-none d-md-flex"></div>
+                <div id="content-left" class="col col-12 col-md-6 h-100">
+                    <!-- menu de navigation sur desktop -->
+                    <div id="content-nav-dt" class="row d-none d-md-flex mb-1">
+                        <div id="button-all-rooms-dt" class="buttons-dt col btn">
+                            Toutes les salles
+                        </div>
+                        <div id="button-levels-dt" class="buttons-dt col btn active">
+                            Étages
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- contenu: toutes les salles -->
+                        <div id='content-all-rooms' class="content-dt content-mb col-12 d-flex flex-column flex-md-wrap flex-md-shrink inactive">
+                            <!-- content via js -->
+                        </div>
+                        <!-- contenu: étages -->
+                        <div id="content-levels" class="content-dt content-mb col-12 active">
+                            <div class="row row-cols-3 flex-nowrap">
+                                <div id="cmenu-content-axio-nav" class="col-auto px-0 flex-column">
+                                    <!-- content via js -->
+                                </div>
+                                <div id="cmenu-content-axio-images" class="col-auto px-0">
+                                    <!-- content via js -->
+                                </div>
+                                <div id="cmenu-content-axio-scenes" class="d-none d-md-flex flex-grow-1 col px-0">
+                                    <!-- content via js -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="content-right" class="col col-12 col-md-6 h-100">
+                    <!-- contenu: plan -->
+                    <div id="cr-map-scenes" class="d-flex d-md-none mb-1">
+                        <!-- content via js -->
+                    </div>
+                    <div>
+                        <div id="cr-map-image">
+                            <!-- content via js -->
+                        </div>
+                        <div id="cr-map-pointers">
+                            <!-- content via js -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-auto d-none d-md-flex"></div>
+            </div>
+        </div>
+    </div>
+
+    <a href="javascript:void(0)" id="autorotateToggle">
+        <i class="bi bi-play-btn"></i>
+        <i class="bi bi-pause-btn"></i>
+    </a>
+    <a href="javascript:void(0)" id="fullscreenToggle">
+        <i class="bi bi-fullscreen"></i>
+        <i class="bi bi-fullscreen-exit"></i>
+    </a>
+
+    <a class="viewControlButton viewControlButton-1" href="javascript:void(0)" id="viewUp">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+    <a class="viewControlButton viewControlButton-2" href="javascript:void(0)" id="viewDown">
+        <i class="bi bi-arrow-down"></i>
+    </a>
+    <a class="viewControlButton viewControlButton-3" href="javascript:void(0)" id="viewLeft">
+        <i class="bi bi-arrow-left"></i>
+    </a>
+    <a class="viewControlButton viewControlButton-4" href="javascript:void(0)" id="viewRight">
+        <i class="bi bi-arrow-right"></i>
+    </a>
+    <a class="viewControlButton viewControlButton-5" href="javascript:void(0)" id="viewIn">
+        <i class="bi bi-plus-lg"></i>
+    </a>
+    <a class="viewControlButton viewControlButton-6" href="javascript:void(0)" id="viewOut">
+        <i class="bi bi-dash-lg"></i>
+    </a>
+
+</body>
+
+</html>
