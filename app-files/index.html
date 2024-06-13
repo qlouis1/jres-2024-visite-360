@@ -20,7 +20,7 @@
     <link href="assets/css/hotspots.css" rel="stylesheet" />
 
 
-<script defer src="main.bundle.js?89dea03e4e5163be127d"></script></head>
+<script defer src="main.bundle.js?f6eebe1e691cc2af5fbf"></script></head>
 
 <body class="multiple-scenes">
 
@@ -43,7 +43,9 @@
             </div>
 
             <div class="ttbcontent order-3 order-md-3 d-flex align-items-center">
-                <p id="ttb-scene-title" class="text-center"></p>
+                <div id="ttb-scene-title" class="text-center d-inline-flex">
+                    <!-- content via js -->
+                </div>
             </div>
 
             <div class="ttbcontent order-2 order-md-5 d-flex align-items-center">
@@ -58,6 +60,7 @@
                 <div style="width:100px;height:40px;"></div>
             </div>
         </div>
+
         <!-- Contenu du menu de navigation -->
         <div id="cmenu" class="collapse collapse-vertical container-fluid pt-0 pt-md-2">
             <!-- Menu de navigation de tabs sur mobile-->
@@ -73,7 +76,7 @@
                 </div>
             </div>
             <!-- colones de contenu -->
-            <div class="row flex-nowrap h-100">
+            <div class="content-row row flex-nowrap">
                 <!-- partie gauche: nav -->
                 <div class="col-auto d-none d-md-flex"></div>
                 <div id="content-left" class="col col-12 col-md-6 h-100">
@@ -112,7 +115,7 @@
                     <div id="cr-map-scenes" class="d-flex d-md-none mb-1">
                         <!-- content via js -->
                     </div>
-                    <div>
+                    <div id="cr-map">
                         <div id="cr-map-image">
                             <!-- content via js -->
                         </div>
@@ -153,7 +156,8 @@
     <a class="viewControlButton viewControlButton-6" href="javascript:void(0)" id="viewOut">
         <i class="bi bi-dash-lg"></i>
     </a>
-
+    <footer id="footer" class="container-fluid">
+    </footer>
 </body>
 
 </html>

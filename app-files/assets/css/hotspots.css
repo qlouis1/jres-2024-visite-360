@@ -93,6 +93,8 @@
 
 /* icon */
 .icon-hotspot {
+    background-color: var(--jres-color);
+    color: #313131;
     margin-left: calc(var(--icon-hotspot-size) / -2);
     margin-top: calc(var(--icon-hotspot-size) / -2);
 
@@ -101,6 +103,10 @@
     border-radius: 25%;
     outline: 1px solid var(--hotspot-secondary-color);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.8), 0 0 12px rgba(0, 0, 0, 0.4), 0 0 1px rgba(0, 0, 0, 0.8) inset;
+}
+
+.icon-hotspot:hover {
+    cursor: not-allowed;
 }
 
 .icon-flex-cont {
