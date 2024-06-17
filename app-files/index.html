@@ -20,7 +20,7 @@
     <link href="assets/css/hotspots.css" rel="stylesheet" />
 
 
-<script defer src="main.bundle.js?09a42e2bfbb3b478a4fb"></script></head>
+<script defer src="main.bundle.js?85a1caf51b0b4347e794"></script></head>
 
 <body class="multiple-scenes">
 
@@ -131,78 +131,43 @@
         </div>
     </div>
 
-    <div id="controls" class="container flex-column">
-        <div class="container text-center">
-            <div class="row align-items-center vh-100">
-                <div id="ctrl-buttons" class="col-auto active">
-                    <!-- autorotate -->
-                    <div class="row">
-                        <div class="col">
-                            <div id="ctrl-autorotate" class="ctrl">
-                                <i class="fa-regular fa-circle-play active"></i>
-                                <i class="fa-regular fa-circle-pause inactive"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- fullscreen -->
-                    <div class="row">
-                        <div class="col">
-                            <div id="ctrl-fullscreen" class="ctrl">
-                                <i class="fa-solid fa-expand active"></i>
-                                <i class="fa-solid fa-compress inactive"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- zoom -->
-                    <div class="row">
-                        <div class="col">
-                            <div id="ctrl-zoom-plus" class="ctrl">
-                                <i class="fa-solid fa-magnifying-glass-plus"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div id="ctrl-zoom-minus" class="ctrl">
-                                <i class="fa-solid fa-magnifying-glass-minus"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- joystick -->
-                    <div class="row">
-                        <div class="col">
-                            <div id="ctrl-up" class="ctrl">
-                                <i class="fa-solid fa-circle-up"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div id="ctrl-left" class="ctrl">
-                                <i class="fa-solid fa-circle-left"></i>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div id="ctrl-right" class="ctrl">
-                                <i class="fa-solid fa-circle-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div id="ctrl-down" class="ctrl">
-                                <i class="fa-solid fa-circle-down"></i>
-                            </div>
-                        </div>
-                    </div>
+    <div id="controls" class="container flex-column pe-2">
+        <div id="ctrl-chevron" class="ctrl mb-3">
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+        <div id="ctrl-buttons" class="active">
+            <div id="ctrl-autorotate" class="ctrl my-1">
+                <i class="fa-regular fa-circle-play active"></i>
+                <i class="fa-regular fa-circle-pause inactive"></i>
+            </div>
+            <div id="ctrl-fullscreen" class="ctrl my-1">
+                <i class="fa-solid fa-expand active"></i>
+                <i class="fa-solid fa-compress inactive"></i>
+            </div>
+            <div id="ctrl-zoom-plus" class="ctrl my-1">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+            <div id="ctrl-zoom-minus" class="ctrl my-1">
+                <i class="fa-solid fa-magnifying-glass-minus"></i>
+            </div>
+
+            <div id="ctrl-up" class="ctrl my-1">
+                <i class="fa-solid fa-circle-up"></i>
+            </div>
+            <div class="d-inline-flex">
+                <div id="ctrl-left" class="ctrl me-1">
+                    <i class="fa-solid fa-circle-left"></i>
                 </div>
-                <div class="col">
-                    <div id="ctrl-ctrl" class="ctrl">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </div>
+
+                <div id="ctrl-right" class="ctrl ms-1">
+                    <i class="fa-solid fa-circle-right"></i>
                 </div>
             </div>
+            <div id="ctrl-down" class="ctrl">
+                <i class="fa-solid fa-circle-down"></i>
+            </div>
         </div>
+
     </div>
     <footer id="footer" class="container-fluid">
         <div class="d-flex align-items-center">

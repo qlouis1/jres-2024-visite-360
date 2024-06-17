@@ -137,7 +137,6 @@ footer {
     position: absolute;
     z-index: 3;
     right: 0;
-    top: 0;
     width: auto;
     background-color: transparent;
     color: var(--jres-color);
@@ -147,12 +146,10 @@ footer {
 
 }
 
-#controls col {
-    padding: 0;
-}
-
 #controls .ctrl {
-    text-decoration: none;
+    display: flex;
+    width: min-content;
+    margin: auto;
 }
 
 #controls .ctrl:hover {
@@ -395,7 +392,13 @@ footer {
     }
 
     #controls {
+        /* top: calc(50vh - 315px); */
+        top: 110px;
         font-size: 60px;
+    }
+
+    #ctrl-down {
+        margin-top: -18px !important;
     }
 
     .content-image.axio-image,
@@ -460,8 +463,15 @@ footer {
     }
 
     #controls {
+        /* top: calc(50vh - 126px); */
+        top: 140px;
         font-size: 24px;
     }
+
+    #ctrl-down {
+        margin-top: -4px !important;
+    }
+
 
     .content-image.axio-image,
     .content-image.axio-mask,
