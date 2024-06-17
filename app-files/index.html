@@ -20,7 +20,7 @@
     <link href="assets/css/hotspots.css" rel="stylesheet" />
 
 
-<script defer src="main.bundle.js?112711aa34e6d4751bdf"></script></head>
+<script defer src="main.bundle.js?09a42e2bfbb3b478a4fb"></script></head>
 
 <body class="multiple-scenes">
 
@@ -51,13 +51,15 @@
             <div class="ttbcontent order-2 order-md-5 d-flex align-items-center">
                 <a class="btn d-inline-flex" href="https://2024.jres.org/">
                     <p class="d-flex me-1">2024.jres.org</p>
-                    <i class="bi bi-door-open"></i>
-                    <i class="bi bi-arrow-right"></i>
+                    <i class="bi bi-box-arrow-up-right"></i>
                 </a>
             </div>
 
             <div class="ttbcontent order-md-4 d-none d-md-flex align-items-center">
-                <div style="width:100px;height:40px;"></div>
+                <a id="ttb-home" class="btn d-inline-flex" href="javascript:void(0);">
+                    <i class="fa-solid fa-house-flag me-1"></i>
+                    <p class="d-flex me-1">Retour à l'entrée</p>
+                </a>
             </div>
         </div>
 
@@ -129,34 +131,86 @@
         </div>
     </div>
 
-    <a href="javascript:void(0)" id="autorotateToggle">
-        <i class="bi bi-play-btn"></i>
-        <i class="bi bi-pause-btn"></i>
-    </a>
-    <a href="javascript:void(0)" id="fullscreenToggle">
-        <i class="bi bi-fullscreen"></i>
-        <i class="bi bi-fullscreen-exit"></i>
-    </a>
-
-    <a class="viewControlButton viewControlButton-1" href="javascript:void(0)" id="viewUp">
-        <i class="bi bi-arrow-up"></i>
-    </a>
-    <a class="viewControlButton viewControlButton-2" href="javascript:void(0)" id="viewDown">
-        <i class="bi bi-arrow-down"></i>
-    </a>
-    <a class="viewControlButton viewControlButton-3" href="javascript:void(0)" id="viewLeft">
-        <i class="bi bi-arrow-left"></i>
-    </a>
-    <a class="viewControlButton viewControlButton-4" href="javascript:void(0)" id="viewRight">
-        <i class="bi bi-arrow-right"></i>
-    </a>
-    <a class="viewControlButton viewControlButton-5" href="javascript:void(0)" id="viewIn">
-        <i class="bi bi-plus-lg"></i>
-    </a>
-    <a class="viewControlButton viewControlButton-6" href="javascript:void(0)" id="viewOut">
-        <i class="bi bi-dash-lg"></i>
-    </a>
+    <div id="controls" class="container flex-column">
+        <div class="container text-center">
+            <div class="row align-items-center vh-100">
+                <div id="ctrl-buttons" class="col-auto active">
+                    <!-- autorotate -->
+                    <div class="row">
+                        <div class="col">
+                            <div id="ctrl-autorotate" class="ctrl">
+                                <i class="fa-regular fa-circle-play active"></i>
+                                <i class="fa-regular fa-circle-pause inactive"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- fullscreen -->
+                    <div class="row">
+                        <div class="col">
+                            <div id="ctrl-fullscreen" class="ctrl">
+                                <i class="fa-solid fa-expand active"></i>
+                                <i class="fa-solid fa-compress inactive"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- zoom -->
+                    <div class="row">
+                        <div class="col">
+                            <div id="ctrl-zoom-plus" class="ctrl">
+                                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div id="ctrl-zoom-minus" class="ctrl">
+                                <i class="fa-solid fa-magnifying-glass-minus"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- joystick -->
+                    <div class="row">
+                        <div class="col">
+                            <div id="ctrl-up" class="ctrl">
+                                <i class="fa-solid fa-circle-up"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div id="ctrl-left" class="ctrl">
+                                <i class="fa-solid fa-circle-left"></i>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div id="ctrl-right" class="ctrl">
+                                <i class="fa-solid fa-circle-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div id="ctrl-down" class="ctrl">
+                                <i class="fa-solid fa-circle-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div id="ctrl-ctrl" class="ctrl">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer id="footer" class="container-fluid">
+        <div class="d-flex align-items-center">
+            <a class="btn d-inline-flex" href="https://2024.jres.org/mentions-legales">
+                <p class="d-flex me-1">Mentions légales</p>
+                <i class="bi bi-box-arrow-up-right"></i>
+            </a>
+        </div>
     </footer>
 </body>
 

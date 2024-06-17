@@ -23,6 +23,7 @@
     --secondary-color: black;
     --tertiary-color: #ececec;
     --jres-color: #fffce4;
+    --jres-color-shadow: #81793c;
 
     --r-entrance-color: #9e9fec;
     --r-important-color: #f14949;
@@ -127,6 +128,42 @@ footer {
     font-size: large;
     font-weight: bold;
 }
+
+/**
+ * controls
+ */
+
+#controls {
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    top: 0;
+    width: auto;
+    background-color: transparent;
+    color: var(--jres-color);
+    border-radius: 15px 0 0 15px;
+    padding: 0;
+    text-shadow: 0 0 8px black, 2px 2px 4px black;
+
+}
+
+#controls col {
+    padding: 0;
+}
+
+#controls .ctrl {
+    text-decoration: none;
+}
+
+#controls .ctrl:hover {
+    color: var(--primary-color);
+}
+
+#controls .ctrl:active {
+    color: var(--jres-color-shadow);
+}
+
+#ctrl-ctrl {}
 
 /**
  * cmenu
@@ -357,6 +394,10 @@ footer {
         margin-bottom: 10px;
     }
 
+    #controls {
+        font-size: 60px;
+    }
+
     .content-image.axio-image,
     .content-image.axio-mask,
     #axio-mask-map {
@@ -416,6 +457,10 @@ footer {
     #ttb-scene-title {
         width: calc(70vw - 24px);
         min-width: 215px;
+    }
+
+    #controls {
+        font-size: 24px;
     }
 
     .content-image.axio-image,
