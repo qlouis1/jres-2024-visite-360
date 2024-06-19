@@ -464,8 +464,8 @@ footer {
     }
 
     #controls {
-        /* top: calc(50vh - 126px); */
-        top: calc(100vh - 280px);
+        /* top: calc(100vh - 280px); */
+        top: 140px;
         font-size: 28px;
     }
 
