@@ -32,7 +32,8 @@
     --r-session-color: #7fcde0;
     --r-poster-color: #fec5bd;
     --r-break-color: #6fc350;
-    --r-other-color: #bebebe;
+    --r-other-color: #e9e9e9;
+    --r-out-color: #bebebe;
 }
 
 html,
@@ -201,8 +202,8 @@ footer {
     border: 0;
 }
 
-#button-all-rooms-dt.btn,
-#button-levels-dt.btn {
+#button-ar-dt.btn,
+#button-ls-dt.btn {
     font-size: 18px;
     font-weight: bolder;
 }
@@ -420,7 +421,7 @@ footer {
         top: 8px;
     }
 
-    #content-all-rooms {
+    #content-ar {
         padding-bottom: 10px;
         height: calc(100vh - 171px);
         min-height: 450px;
@@ -465,7 +466,7 @@ footer {
     #controls {
         /* top: calc(50vh - 126px); */
         top: 140px;
-        font-size: 24px;
+        font-size: 28px;
     }
 
     #ctrl-down {
@@ -483,8 +484,8 @@ footer {
         width: 100%;
     }
 
-    #content-levels,
-    #content-all-rooms,
+    #content-ls,
+    #content-ar,
     #content-right>#cr-map {
         padding-bottom: 20px;
         height: calc(100vh - 187px);
@@ -496,13 +497,20 @@ footer {
         margin-bottom: 50px;
     }
 
-    #content-all-rooms .scene,
-    #content-all-rooms .scene-title {
+    #content-ar .scene,
+    #content-ar .scene-title {
         width: calc(100vw - 64px);
     }
 
     #content-right .scene {
-        outline: 2px solid white;
+        outline: 2px solid var(--primary-color);
+        background-color: rgb(225, 225, 225);
+        padding-right: 4px;
+        width: fit-content;
+    }
+
+    #content-right .scene.hover {
+        outline: 2px solid var(--secondary-color);
         background-color: rgb(225, 225, 225);
         padding-right: 4px;
         width: fit-content;

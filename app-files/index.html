@@ -20,7 +20,7 @@
     <link href="assets/css/hotspots.css" rel="stylesheet" />
 
 
-<script defer src="main.bundle.js?99c4c66250ed8750b9e8"></script></head>
+<script defer src="main.bundle.js?dcfc5e2791e2088d6137"></script></head>
 
 <body class="multiple-scenes">
 
@@ -67,13 +67,13 @@
         <div id="cmenu" class="collapse collapse-vertical container-fluid pt-0 pt-md-2">
             <!-- Menu de navigation de tabs sur mobile-->
             <div id="content-nav-mb" class="row d-flex d-md-none text-center">
-                <div id="button-levels-mb" class="buttons-mb col btn align-content-center active">
+                <div id="button-ls-mb" class="button button-mb col btn align-content-center active" data-prefix="ls" data-media="mb">
                     Étages
                 </div>
-                <div id="button-map-mb" class="buttons-mb col btn align-content-center">
+                <div id="button-cr-mb" class="button button-mb col btn align-content-center" data-prefix="cr" data-media="mb">
                     Plan
                 </div>
-                <div id="button-all-rooms-mb" class="buttons-mb col btn align-content-center">
+                <div id="button-ar-mb" class="button button-mb col btn align-content-center" data-prefix="ar" data-media="mb">
                     Salles
                 </div>
             </div>
@@ -84,20 +84,20 @@
                 <div id="content-left" class="col col-12 col-md-6 h-100">
                     <!-- menu de navigation sur desktop -->
                     <div id="content-nav-dt" class="row d-none d-md-flex mb-1">
-                        <div id="button-all-rooms-dt" class="buttons-dt col btn">
+                        <div id="button-ar-dt" class="button button-dt col btn" data-prefix="ar" data-media="dt">
                             Toutes les salles
                         </div>
-                        <div id="button-levels-dt" class="buttons-dt col btn active">
+                        <div id="button-ls-dt" class="button button-dt col btn active" data-prefix="ls" data-media="dt">
                             Étages
                         </div>
                     </div>
                     <div class="row">
                         <!-- contenu: toutes les salles -->
-                        <div id='content-all-rooms' class="content-dt content-mb col-12 d-flex flex-column flex-md-wrap flex-md-shrink inactive">
+                        <div id='content-ar' class="content-dt content-mb col-12 d-flex flex-column flex-md-wrap flex-md-shrink inactive">
                             <!-- content via js -->
                         </div>
                         <!-- contenu: étages -->
-                        <div id="content-levels" class="content-dt content-mb col-12 active">
+                        <div id="content-ls" class="content-dt content-mb col-12 active">
                             <div class="row row-cols-3 flex-nowrap">
                                 <div id="cmenu-content-axio-nav" class="col-auto px-0 flex-column">
                                     <!-- content via js -->
@@ -167,7 +167,6 @@
                 <i class="fa-solid fa-circle-down"></i>
             </div>
         </div>
-
     </div>
     <footer id="footer" class="container-fluid">
         <div class="d-flex align-items-center">
