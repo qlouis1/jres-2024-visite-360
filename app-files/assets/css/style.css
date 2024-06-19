@@ -465,7 +465,7 @@ footer {
 
     #controls {
         /* top: calc(50vh - 126px); */
-        top: 140px;
+        top: calc(100vh - 280px);
         font-size: 28px;
     }
 
