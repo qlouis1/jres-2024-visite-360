@@ -493,6 +493,11 @@ footer {
         overflow-x: hidden;
     }
 
+    #content-ar {
+        background-color: #dad;
+        padding-bottom: 250px;
+    }
+
     #cr-map {
         margin-bottom: 50px;
     }
